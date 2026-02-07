@@ -20,7 +20,7 @@ const Feed = () => {
   }, []);
 
   return !loading ? (
-    <div className="h-full overflow-y-scroll overflow-hidden flex items-start justify-between xl:gap-8 mt-2">
+    <div className=" min-h-screen  overflow-hidden flex items-start justify-between xl:gap-8 mt-2">
       <div>
         <StoriesBar />
         <div className="p-4 space-y-6">
@@ -30,8 +30,8 @@ const Feed = () => {
         </div>
       </div>
       <div>
-        <div className="max-xl:hidden sticky top-0">
-          <div className="max-w-xs bg-white text-xs p-4 rounded-md inline-flex flex-col gap-2 shadow">
+        <div className="max-xl:hidden right-5 top-3 fixed">
+          <div className=" max-w-xs bg-white text-xs p-4 rounded-md inline-flex flex-col gap-2 shadow">
             <h1 className="text-slate-800 font-semibold">Sponsored</h1>
             <img
               src={assets.sponsored_img}

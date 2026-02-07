@@ -20,7 +20,7 @@ const RecentsMessages = () => {
             <Link
               key={index}
               className="flex items-start gap-3 py-2 hover:bg-slate-100"
-              to={`/message/${message.from_user_id._id}`}
+              to={`/messages/${message.from_user_id._id}`}
             >
               <img
                 src={message.from_user_id.profile_picture}

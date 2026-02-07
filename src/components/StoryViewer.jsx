@@ -1,5 +1,6 @@
 import { BadgeCheck, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const StoryViewer = ({ viewStory, setViewStory }) => {
   if (!viewStory) return null;
@@ -57,6 +58,7 @@ const StoryViewer = ({ viewStory, setViewStory }) => {
       };
     }
   }, [viewStory, setViewStory]);
+  const navigate = useNavigate();
   return (
     <div
       className="fixed inset-0 h-screen bg-black bg-opacity-90 z-110 flex items-center justify-center"
@@ -73,13 +75,18 @@ const StoryViewer = ({ viewStory, setViewStory }) => {
           }}
         ></div>
       </div>
-      <div className="absolute top-4 left-4 flex items-center space-x-3 p-2 px-4 sm:p-4 sm:px-8 backdrop-blur-2xl rounded bg-black/50 ">
+      <div
+        onClick={() => {
+          navigate(`/profile/` + viewStory.user._id);
+        }}
+        className="absolute top-4 left-4 flex items-center cursor-pointer space-x-3 p-2 px-4 sm:p-4 sm:px-8 backdrop-blur-2xl rounded bg-black/50 "
+      >
         <img
           src={viewStory.user?.profile_picture}
           className="size-7 sm:size-8 rounded-full object-cover border-white "
           alt=""
         />
-        <div className="text-white font-medium flex items-center gap-1.5">
+        <div className="text-white font-medium flex items-center gap-1.5 ">
           <span>{viewStory.user?.full_name}</span>
           <BadgeCheck size={18} />
         </div>

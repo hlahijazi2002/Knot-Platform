@@ -19,7 +19,7 @@ const Post = ({ post }) => {
       onClick={() => {
         navigate(`/profile/` + post.user._id);
       }}
-      className="bg-white rounded-xl shadow p-4 space-y-4 w-full max-w-2xl cursor-pointer"
+      className="bg-white rounded-xl shadow p-4 space-y-4 w-full max-w-2xl cursor-pointer "
     >
       <div className="flex items-center gap-2">
         <img

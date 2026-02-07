@@ -20,7 +20,7 @@ const Feed = () => {
   }, []);
 
   return !loading ? (
-    <div className="h-full overflow-y-scroll  custom-scrollbar flex items-start justify-between xl:gap-8 mt-2">
+    <div className="h-full overflow-y-scroll overflow-hidden flex items-start justify-between xl:gap-8 mt-2">
       <div>
         <StoriesBar />
         <div className="p-4 space-y-6">
